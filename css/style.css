@@ -1,0 +1,49 @@
+/* minimalist, responsive */
+* { box-sizing: border-box; }
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+header {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+header h1 { margin: 0; font-size: 1.25rem; }
+nav { display: flex; gap: 0.5rem; align-items: center; }
+button { cursor: pointer; }
+
+#weekBoard {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+.day {
+  border: 1px solid #e5e5e5;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 12rem;
+}
+.day header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dayTotal { font-weight: 600; }
+.entryList { list-style: none; padding-left: 0; margin: 0.5rem 0 0 0; flex: 1; }
+.entry { font-size: 0.9rem; display: flex; gap: 0.25rem; align-items: center; }
+.entry .del { margin-left: auto; visibility: hidden; background: none; border: none; }
+.entry:hover .del { visibility: visible; }
+
+/* dialog */
+dialog { border: none; border-radius: 6px; padding: 1rem; }
+label { display: flex; flex-direction: column; margin-bottom: 0.5rem; font-size: 0.9rem; }
+menu { display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 1rem; }
