@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro Tracker</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Pomodoros</h1>
+      <nav>
+        <button id="prevWeek" title="Previous week">‹</button>
+        <span id="weekLabel"></span>
+        <button id="nextWeek" title="Next week">›</button>
+        <button id="exportBtn">Export</button>
+        <button id="importBtn">Import</button>
+        <input type="file" id="importFile" accept="application/json" hidden />
+      </nav>
+    </header>
+
+    <main id="weekBoard"></main>
+
+    <!-- Entry dialog -->
+    <dialog id="entryDialog">
+      <form id="entryForm" method="dialog">
+        <h2>Add Pomodoro</h2>
+        <label>
+          Date
+          <input type="date" name="date" required />
+        </label>
+        <label>
+          Project
+          <input type="text" name="project" required />
+        </label>
+        <label>
+          Description
+          <input type="text" name="description" />
+        </label>
+        <label>
+          Area
+          <input type="text" name="area" />
+        </label>
+        <label>
+          Count
+          <input type="number" name="count" min="1" step="1" value="1" />
+        </label>
+        <menu>
+          <button value="cancel">Cancel</button>
+          <button id="saveBtn" value="default">Save</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <template id="dayTemplate">
+      <section class="day">
+        <header>
+          <span class="dayName"></span>
+          <span class="dayTotal"></span>
+          <button class="addEntry">＋</button>
+        </header>
+        <ul class="entryList"></ul>
+      </section>
+    </template>
+
+    <template id="entryTemplate">
+      <li class="entry">
+        <span class="project"></span>
+        <span class="desc"></span>
+        (<span class="cnt"></span>)
+        <button class="del">×</button>
+      </li>
+    </template>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
